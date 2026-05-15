@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CipherShield — Advanced Cybersecurity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Matrix canvas background -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Scan line overlay -->
+  <div class="scanlines"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>CIPHER<span class="logo-accent">SHIELD</span><span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#threats">THREAT MAP</a></li>
+      <li><a href="#about">ABOUT</a></li>
+    </ul>
+    <button class="btn-login" id="openLogin">
+      <span class="btn-text">ACCESS PORTAL</span>
+      <span class="btn-glow"></span>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tag">// NEXT-GEN DEFENSE SYSTEM</div>
+      <h1 class="hero-title">
+        <span class="glitch" data-text="SECURE">SECURE</span><br/>
+        <span class="hero-accent">YOUR DIGITAL</span><br/>
+        <span class="glitch" data-text="PERIMETER">PERIMETER</span>
+      </h1>
+      <p class="hero-desc">
+        Military-grade encryption. AI-powered threat detection.<br/>
+        Zero-trust architecture for the modern enterprise.
+      </p>
+      <div class="hero-ctas">
+        <button class="cta-primary" id="openLoginHero">INITIALIZE DEFENSE</button>
+        <button class="cta-secondary">VIEW PROTOCOLS</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="99.9">0</span><span>%</span>
+          <span class="stat-label">Uptime SLA</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="2400">0</span><span>+</span>
+          <span class="stat-label">Threats Blocked Daily</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="128">0</span><span>-BIT</span>
+          <span class="stat-label">Encryption</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="shield-container">
+        <div class="shield-ring ring-1"></div>
+        <div class="shield-ring ring-2"></div>
+        <div class="shield-ring ring-3"></div>
+        <div class="shield-core">
+          <svg viewBox="0 0 100 120" class="shield-svg">
+            <path d="M50 5 L95 25 L95 60 C95 85 72 108 50 115 C28 108 5 85 5 60 L5 25 Z" 
+                  fill="none" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M50 20 L82 35 L82 60 C82 78 67 96 50 103 C33 96 18 78 18 60 L18 35 Z" 
+                  fill="rgba(0,255,140,0.05)" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 2"/>
+            <text x="50" y="72" text-anchor="middle" font-family="Share Tech Mono" font-size="28" fill="var(--accent)">⛨</text>
+          </svg>
+        </div>
+        <div class="orbit-dot dot-1"></div>
+        <div class="orbit-dot dot-2"></div>
+        <div class="orbit-dot dot-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <span class="section-tag">// PROTOCOLS</span>
+      <h2>DEFENSE <span class="accent">SYSTEMS</span></h2>
+      <div class="header-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-delay="0">
+        <div class="card-icon">🔐</div>
+        <div class="card-num">01</div>
+        <h3>ENDPOINT PROTECTION</h3>
+        <p>AI-driven behavioral analysis stops zero-day threats before they execute. Real-time monitoring across all devices.</p>
+        <div class="card-bar"><div class="bar-fill" style="--w:92%"></div></div>
+        <span class="card-metric">92% Threat Reduction</span>
+      </div>
+      <div class="service-card" data-delay="100">
+        <div class="card-icon">🌐</div>
+        <div class="card-num">02</div>
+        <h3>NETWORK FORTRESS</h3>
+        <p>Deep packet inspection, intrusion prevention, and adaptive firewall rules powered by machine learning.</p>
+        <div class="card-bar"><div class="bar-fill" style="--w:97%"></div></div>
+        <span class="card-metric">97% Attack Prevention</span>
+      </div>
+      <div class="service-card featured" data-delay="200">
+        <div class="card-icon">🧠</div>
+        <div class="card-num">03</div>
+        <h3>AI THREAT INTEL</h3>
+        <p>Predictive threat modeling using global threat intelligence feeds and neural network analysis.</p>
+        <div class="card-bar"><div class="bar-fill" style="--w:89%"></div></div>
+        <span class="card-metric">89% Prediction Accuracy</span>
+        <div class="featured-badge">FLAGSHIP</div>
+      </div>
+      <div class="service-card" data-delay="300">
+        <div class="card-icon">☁️</div>
+        <div class="card-num">04</div>
+        <h3>CLOUD SENTINEL</h3>
+        <p>Seamless protection across AWS, Azure, and GCP. Zero-trust architecture with continuous verification.</p>
+        <div class="card-bar"><div class="bar-fill" style="--w:95%"></div></div>
+        <span class="card-metric">95% Cloud Coverage</span>
+      </div>
+      <div class="service-card" data-delay="400">
+        <div class="card-icon">🔑</div>
+        <div class="card-num">05</div>
+        <h3>IDENTITY VAULT</h3>
+        <p>Multi-factor authentication, privileged access management, and biometric verification protocols.</p>
+        <div class="card-bar"><div class="bar-fill" style="--w:99%"></div></div>
+        <span class="card-metric">99% Auth Success</span>
+      </div>
+      <div class="service-card" data-delay="500">
+        <div class="card-icon">📊</div>
+        <div class="card-num">06</div>
+        <h3>SIEM COMMAND</h3>
+        <p>Centralized security event management with automated incident response and compliance reporting.</p>
+        <div class="card-bar"><div class="bar-fill" style="--w:88%"></div></div>
+        <span class="card-metric">88% Faster Response</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREAT TICKER -->
+  <div class="threat-ticker" id="threats">
+    <span class="ticker-label">⚠ LIVE THREATS</span>
+    <div class="ticker-track">
+      <div class="ticker-content" id="tickerContent"></div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <span class="section-tag">// ABOUT US</span>
+      <h2>BATTLE-TESTED <span class="accent">SINCE 2010</span></h2>
+      <p>CipherShield was founded by ex-NSA and GCHQ operatives with a singular mission: make enterprise-grade security accessible without compromise. Our distributed SOC operates across 14 global data centers, providing continuous coverage.</p>
+      <p>We defend over 3,000 organizations across 60 countries — from Fortune 500 companies to critical government infrastructure.</p>
+      <div class="about-badges">
+        <span class="badge">ISO 27001</span>
+        <span class="badge">SOC 2 TYPE II</span>
+        <span class="badge">GDPR COMPLIANT</span>
+        <span class="badge">FedRAMP AUTHORIZED</span>
+      </div>
+    </div>
+    <div class="terminal-box">
+      <div class="terminal-bar">
+        <span class="t-dot red"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot green"></span>
+        <span class="t-title">system_monitor.sh</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="t-line"><span class="t-prompt">$</span> initializing security sweep...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">[CIPHERSHIELD]</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Security</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CipherShield Inc. All systems encrypted.</span>
+      <span class="footer-status">● SYSTEMS NOMINAL</span>
+    </div>
+  </footer>
+
+  <!-- LOGIN MODAL OVERLAY -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="loginModal">
+      <button class="modal-close" id="closeModal">✕</button>
+
+      <div class="modal-header">
+        <div class="modal-logo">[⛨]</div>
+        <h2>SECURE ACCESS</h2>
+        <p class="modal-sub">Authentication required. All sessions are encrypted.</p>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="login">LOGIN</button>
+        <button class="tab-btn" data-tab="register">REGISTER</button>
+      </div>
+
+      <!-- Login Form -->
+      <div class="tab-content active" id="tab-login">
+        <div class="input-group">
+          <label>OPERATOR ID</label>
+          <div class="input-wrapper">
+            <span class="input-icon">👤</span>
+            <input type="text" id="loginUser" placeholder="enter username" autocomplete="off"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>ACCESS KEY</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔑</span>
+            <input type="password" id="loginPass" placeholder="enter password"/>
+            <button class="toggle-pass" data-target="loginPass">👁</button>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>2FA TOKEN</label>
+          <div class="otp-boxes" id="otpBoxes">
+            <input class="otp-input" maxlength="1" type="text" inputmode="numeric"/>
+            <input class="otp-input" maxlength="1" type="text" inputmode="numeric"/>
+            <input class="otp-input" maxlength="1" type="text" inputmode="numeric"/>
+            <input class="otp-input" maxlength="1" type="text" inputmode="numeric"/>
+            <input class="otp-input" maxlength="1" type="text" inputmode="numeric"/>
+            <input class="otp-input" maxlength="1" type="text" inputmode="numeric"/>
+          </div>
+        </div>
+        <button class="btn-submit" id="loginBtn">
+          <span>AUTHENTICATE</span>
+          <div class="loader" id="loginLoader"></div>
+        </button>
+        <div class="modal-message" id="loginMsg"></div>
+        <a href="#" class="forgot-link">Forgot credentials? Contact your security officer</a>
+      </div>
+
+      <!-- Register Form -->
+      <div class="tab-content" id="tab-register">
+        <div class="input-group">
+          <label>FULL NAME</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🪪</span>
+            <input type="text" id="regName" placeholder="your full name"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>EMAIL ADDRESS</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📧</span>
+            <input type="email" id="regEmail" placeholder="operator@domain.com"/>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>CREATE PASSWORD</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="regPass" placeholder="min. 12 characters"/>
+            <button class="toggle-pass" data-target="regPass">👁</button>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="strengthFill"></div>
+          </div>
+          <span class="strength-label" id="strengthLabel">Password strength</span>
+        </div>
+        <button class="btn-submit" id="registerBtn">
+          <span>REQUEST ACCESS</span>
+          <div class="loader" id="registerLoader"></div>
+        </button>
+        <div class="modal-message" id="registerMsg"></div>
+      </div>
+
+      <div class="modal-footer-note">
+        🔒 256-bit AES encrypted &nbsp;|&nbsp; Zero-knowledge architecture
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
